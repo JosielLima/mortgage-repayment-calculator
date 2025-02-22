@@ -1,0 +1,43 @@
+/* styles/tokens.css - Design tokens */
+:root {
+  /* Colors */
+  --color-primary: hsl(61, 70%, 52%);
+  --color-primary-light: hsl(61, 70%, 62%);
+  --color-primary-dark: hsl(61, 70%, 42%);
+  
+  --color-secondary: hsl(4, 69%, 50%);
+  --color-secondary-light: hsl(4, 69%, 60%);
+  --color-secondary-dark: hsl(4, 69%, 40%);
+  
+  --color-slate-100: hsl(202, 86%, 94%);
+  --color-slate-300: hsl(203, 41%, 72%);
+  --color-slate-500: hsl(200, 26%, 54%);
+  --color-slate-700: hsl(200, 24%, 40%);
+  --color-slate-900: hsl(202, 55%, 16%);
+
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  
+  /* Spacing */
+  --space-10: 1rem;   /* 16px */
+  --space-100: 8rem;   /* 128px */
+  --space-150: 12rem;  /* 192px */
+  --space-200: 16rem;  /* 256px */
+  --space-300: 24rem;  /* 384px */
+  --space-400: 32rem;  /* 512px */
+  --space-500: 40rem;  /* 640px */
+  
+  /* Typography */
+  --font-family-base: 'Plus Jakarta Sans', sans-serif;
+  --font-size-base: 16px;
+  --font-size-title: 1.5em;
+  --line-height-tight: 125%;
+  --line-height-normal: 150%;
+
+  /* Breakpoints */
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
+
+}

@@ -1,0 +1,26 @@
+/* Container */
+.container {
+  max-width: var(--breakpoint-lg);
+  margin: 0 auto;
+  height: 600px;
+  background-color: var(--color-white);
+  border-radius: 24px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+
+/* Result */
+.result {
+  background-color: var(--color-slate-900);
+  border-bottom-left-radius: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-10);
+  padding: 2.5rem;
+}

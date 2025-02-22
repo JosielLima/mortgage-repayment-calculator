@@ -1,0 +1,29 @@
+body {
+  background-color: var(--color-slate-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+.text-preset-2 {
+  font-size: var(--font-size-title);
+  line-height: var(--line-height-normal);
+  font-weight: bold;
+  font-size: var(--font-size-base);
+}
+
+.text-preset-3 {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-tight);
+}
+
+.text-preset-4 {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-tight);
+  font-weight: 500;
+  color: var(--color-slate-300);
+}
