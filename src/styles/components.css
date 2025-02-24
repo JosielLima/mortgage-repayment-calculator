@@ -24,3 +24,18 @@
   gap: var(--space-10);
   padding: 2.5rem;
 }
+
+/* Form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  padding: 2.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}

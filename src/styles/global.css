@@ -13,7 +13,6 @@ body {
   font-size: var(--font-size-title);
   line-height: var(--line-height-normal);
   font-weight: bold;
-  font-size: var(--font-size-base);
 }
 
 .text-preset-3 {
