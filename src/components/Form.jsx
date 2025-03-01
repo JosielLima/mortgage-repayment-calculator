@@ -91,34 +91,51 @@ const Form = ({setResults}) => {
   };
 
   return (
-    <div className="form">
-      <form onSubmit={handleSubmit}>
-        {/* ... header ... */}
+    <div>
+      <form className="form" onSubmit={handleSubmit}>
+        <header className='header'>
+          <h6 className="text-preset-2 text-slate-900">Mortgage Repayment</h6>
+          <button onClick={handleReset} className='text-preset-4 btn-reset'>Clear</button>
+        </header>
         <div className="form-group">
-          <label htmlFor="amount">Mortgage amount (€)</label>
-          <input type="number" id="amount" name="amount" value={form.amount} onChange={handleChange} />
+          <label htmlFor="amount" className="text-preset-4 text-slate-700">Mortgage amount (€)</label>
+          <div className="input-group">
+            <span className='icon text-preset-3'>€</span>
+            <input type="number" id="amount" name="amount" value={form.amount} onChange={handleChange} className='input' />
+          </div>
           {errors.amount && <p className="error">{errors.amount}</p>}
         </div>
-        <div className="form-group">
-          <label htmlFor="termYears">Term (years)</label>
-          <input type="number" id="termYears" name="termYears" value={form.termYears} onChange={handleChange} />
-          {errors.termYears && <p className="error">{errors.termYears}</p>}
+        <div className='form-group-horizontal'>
+          <div className="form-group">
+            <label htmlFor="termYears" className="text-preset-4 text-slate-700">Term (years)</label>
+            <div className="input-group">
+              <input type="number" id="termYears" name="termYears" value={form.termYears} onChange={handleChange} className='input' />
+              <span className='icon text-preset-3'>years</span>
+            </div>
+            {errors.termYears && <p className="error">{errors.termYears}</p>}
+          </div>
+          <div className="form-group">
+            <label htmlFor="interestRate" className="text-preset-4 text-slate-700">Interest rate (%)</label>
+            <div className="input-group">
+              <input type="number" id="interestRate" name="interestRate" value={form.interestRate} onChange={handleChange} className='input' />
+              <span className='icon text-preset-3'>%</span>
+            </div>
+            {errors.interestRate && <p className="error">{errors.interestRate}</p>}
+          </div>
         </div>
         <div className="form-group">
-          <label htmlFor="interestRate">Interest rate (%)</label>
-          <input type="number" id="interestRate" name="interestRate" value={form.interestRate} onChange={handleChange} />
-          {errors.interestRate && <p className="error">{errors.interestRate}</p>}
-        </div>
-        <div className="form-group">
-          <label>Type</label>
-          <input type="radio" id="repayment" name="type" value="repayment" checked={form.type === 'repayment'} onChange={handleChange} />
-          <label htmlFor="repayment">Repayment</label>
-          <input type="radio" id="interest" name="type" value="interest" checked={form.type === 'interest'} onChange={handleChange} />
-          <label htmlFor="interest">Interest Only</label>
+          <label className="text-preset-4 text-slate-700">Type</label>
+          <div className='input-group'>
+            <input type="radio" id="repayment" name="type" value="repayment" checked={form.type === 'repayment'} onChange={handleChange} className='radio'/>
+            <label htmlFor="repayment" className='text-preset-3 text-slate-900'>Repayment</label>
+          </div>
+          <div className='input-group'>
+            <input type="radio" id="interest" name="type" value="interest" checked={form.type === 'interest'} onChange={handleChange} className='radio' />
+            <label htmlFor="interest" className='text-preset-3 text-slate-900'>Interest Only</label>
+          </div>
         </div>
         <button type="submit" className="btn btn-primary">Calculate repayments</button>
       </form>
-      <button onClick={handleReset}>Reset</button>
     </div>
   );
 };
