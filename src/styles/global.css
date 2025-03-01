@@ -9,6 +9,12 @@ body {
   line-height: var(--line-height-normal);
 }
 
+.text-preset-1 {
+  font-size: var(--font-size-large);
+  font-weight: bold;
+  line-height: calc(var(--font-size-large) * 0.3);
+}
+
 .text-preset-2 {
   font-size: var(--font-size-title);
   line-height: var(--line-height-normal);

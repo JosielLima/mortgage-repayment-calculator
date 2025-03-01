@@ -3,28 +3,41 @@ const Result = ({ results }) => {
   return (
     <div className="result">
     {results.monthlyPayment === null ? (
-      <>
+      <div className='result-empty'>
         <img src={illustrationEmpty} alt="No calculations performed" className="result-image" />
         <h6 className="text-preset-2 text-center text-white">Results shown here</h6>
         <p className="text-preset-4 text-center">Complete the form and click “calculate repayments” to see what 
         your monthly repayments would be.</p>
-      </>
+      </div>
     ) : (
-      <>
-          <h6 className="text-preset-2 text-center text-white">Calculation Results</h6>
-          <p className="text-preset-4 text-center">
-            Monthly repayments (€): {results.monthlyPayment}
-          </p>
-          {results.totalRepayment !== null && (
-            <p className="text-preset-4 text-center">
-              Total repayment (€): {results.totalRepayment}
+      <div className='result-full'>
+          <div className='header'>
+            <h6 className="text-preset-2 text-white">Your results</h6>
+            <p className="text-preset-4 text-slate-300">
+            Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.
             </p>
-          )}
-      </>)
+          </div>
+          <div className='card'>
+            <div>
+              <p className='text-preset-4 text-slate-300'>Your monthly repayments</p>
+              <div className='text-preset-1 text-primary'>€{results.monthlyPayment}</div>
+            </div>
+            {results.totalRepayment !== null && (
+            <>
+              <hr />
+              <div>
+                <p className="text-preset-4 text-slate-300">Total you&apos;ll repay over the term</p>
+                <p className="text-preset-2 text-white">
+                  €{results.totalRepayment}
+                </p>
+              </div>
+            </>
+            )}
+          </div>
+      </div>)
     }
     </div>
   );
- 
 };
 
 export default Result;
