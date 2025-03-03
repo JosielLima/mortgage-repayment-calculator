@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import calculatorIcon from '../assets/icon-calculator.svg';
 
 const Form = ({setResults}) => {
   const [form, setForm] = useState({
@@ -134,7 +135,10 @@ const Form = ({setResults}) => {
             <label htmlFor="interest" className='text-preset-3 text-slate-900'>Interest Only</label>
           </div>
         </div>
-        <button type="submit" className="btn btn-primary">Calculate repayments</button>
+        <button type="submit" className="btn btn-primary text-preset-3">
+          <img src={calculatorIcon} alt="Calculator icon"/>
+          Calculate repayments
+        </button>
       </form>
     </div>
   );
