@@ -1,5 +1,14 @@
 import illustrationEmpty from '../assets/illustration-empty.svg';
 const Result = ({ results }) => {
+
+  const formatarEuro = (valor) => {
+    return new Intl.NumberFormat('de-DE', {
+      style: 'currency',
+      currency: 'EUR',
+      currencyDisplay: 'symbol',
+    }).format(valor);
+  }
+
   return (
     <div className="result">
     {results.monthlyPayment === null ? (
@@ -20,7 +29,7 @@ const Result = ({ results }) => {
           <div className='card'>
             <div>
               <p className='text-preset-4 text-slate-300'>Your monthly repayments</p>
-              <div className='text-preset-1 text-primary'>€{results.monthlyPayment}</div>
+              <div className='text-preset-1 text-primary'>{formatarEuro(results.monthlyPayment)}</div>
             </div>
             {results.totalRepayment !== null && (
             <>
@@ -28,7 +37,7 @@ const Result = ({ results }) => {
               <div>
                 <p className="text-preset-4 text-slate-300">Total you&apos;ll repay over the term</p>
                 <p className="text-preset-2 text-white">
-                  €{results.totalRepayment}
+                  {formatarEuro(results.totalRepayment)}
                 </p>
               </div>
             </>
