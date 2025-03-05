@@ -101,11 +101,11 @@ const Form = ({setResults}) => {
     <div>
       <form className="form" onSubmit={handleSubmit}>
         <header className='header'>
-          <h6 className="text-preset-2 text-slate-900">Mortgage Repayment</h6>
-          <button onClick={handleReset} className='text-preset-4 btn-reset'>Clear</button>
+          <h6 className="text-preset-2 text-slate-900">Mortgage Calculator</h6>
+          <button onClick={handleReset} className='text-preset-4 btn-reset'>Clear all</button>
         </header>
         <div className="form-group">
-          <label htmlFor="amount" className="text-preset-4 text-slate-700">Mortgage amount (£)</label>
+          <label htmlFor="amount" className="text-preset-4 text-slate-700">Mortgage amount</label>
           <div className={classNames('input-group', { 'outline-error': errors.amount })}>
             <span className={classNames('icon text-preset-3', { 'icon-error': errors.amount })}>£</span>
             <input type="number" id="amount" name="amount" value={form.amount} onChange={handleChange} className='input' />
@@ -114,7 +114,7 @@ const Form = ({setResults}) => {
         </div>
         <div className='form-group-horizontal'>
           <div className="form-group">
-            <label htmlFor="termYears" className="text-preset-4 text-slate-700">Term (years)</label>
+            <label htmlFor="termYears" className="text-preset-4 text-slate-700">Term</label>
             <div className={classNames('input-group', { 'outline-error': errors.termYears })}>
               <input type="number" id="termYears" name="termYears" value={form.termYears} onChange={handleChange} className='input' />
               <span className={classNames('icon text-preset-3', { 'icon-error': errors.termYears })}>years</span>
@@ -122,7 +122,7 @@ const Form = ({setResults}) => {
             {errors.termYears && <p className="error">{errors.termYears}</p>}
           </div>
           <div className="form-group">
-            <label htmlFor="interestRate" className="text-preset-4 text-slate-700">Interest rate (%)</label>
+            <label htmlFor="interestRate" className="text-preset-4 text-slate-700">Interest rate</label>
             <div className={classNames('input-group', { 'outline-error': errors.interestRate })}>
               <input type="number" id="interestRate" name="interestRate" value={form.interestRate} onChange={handleChange} className='input' />
               <div className={classNames('icon text-preset-3', { 'icon-error': errors.interestRate })}>%</div>
@@ -131,7 +131,7 @@ const Form = ({setResults}) => {
           </div>
         </div>
         <div className="form-group">
-          <label className="text-preset-4 text-slate-700">Type</label>
+          <label className="text-preset-4 text-slate-700">Mortgage Type</label>
           <div className='input-group'>
             <input type="radio" id="repayment" name="type" value="repayment" checked={form.type === 'repayment'} onChange={handleChange} className='radio'/>
             <label htmlFor="repayment" className='text-preset-3 text-slate-900'>Repayment</label>
@@ -144,7 +144,7 @@ const Form = ({setResults}) => {
         </div>
         <button type="submit" className="btn btn-primary text-preset-3">
           <img src={calculatorIcon} alt="Calculator icon"/>
-          Calculate repayments
+          Calculate Repayments
         </button>
       </form>
     </div>
