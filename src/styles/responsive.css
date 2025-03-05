@@ -1,0 +1,40 @@
+@media screen and (max-width: 768px) {
+  .container {
+    margin: var(--space-20);
+    height: 100%;
+  }
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .result {
+    height: auto;
+    border-bottom-left-radius: 0;
+  }
+
+  .form {
+    .form-group-horizontal {
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    margin: 0;
+    height: 100%;
+    border: 0;
+  }
+
+  .form {
+    .header {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+    .form-group-horizontal {
+      flex-direction: column;
+    }
+  }
+}
