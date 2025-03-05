@@ -1,18 +1,21 @@
 import { useState } from 'react';
 import calculatorIcon from '../assets/icon-calculator.svg';
+import classNames from 'classnames';
 
 const Form = ({setResults}) => {
   const [form, setForm] = useState({
     amount: '',
     termYears: '',
     interestRate: '',
-    type: 'repayment',
+    type: '',
   });
 
   const [errors, setErrors] = useState({
     amount: null,
     termYears: null,
     interestRate: null,
+    type: null,
+
   });
 
   const handleChange = (e) => {
@@ -32,7 +35,10 @@ const Form = ({setResults}) => {
     if (!form.interestRate || form.interestRate.trim() === "" || parseFloat(form.interestRate) < 0 || parseFloat(form.interestRate) > 100) {
       newErrors.interestRate = 'This field is required';
     }
-    console.log('teste erros', newErrors);
+
+    if (!form.type || form.type.trim() === "" || form.type === null) {
+      newErrors.type = 'This field is required';
+    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -86,7 +92,7 @@ const Form = ({setResults}) => {
 
   const handleReset = (e) => {
     e.preventDefault();
-    setForm({ amount: '', termYears: '', interestRate: '', type: 'repayment' });
+    setForm({ amount: '', termYears: '', interestRate: '', type: '' });
     setErrors({});
     setResults({ monthlyPayment: null, totalRepayment: null });
   };
@@ -100,8 +106,8 @@ const Form = ({setResults}) => {
         </header>
         <div className="form-group">
           <label htmlFor="amount" className="text-preset-4 text-slate-700">Mortgage amount (€)</label>
-          <div className="input-group">
-            <span className='icon text-preset-3'>€</span>
+          <div className={classNames('input-group', { 'outline-error': errors.amount })}>
+            <span className={classNames('icon text-preset-3', { 'icon-error': errors.amount })}>€</span>
             <input type="number" id="amount" name="amount" value={form.amount} onChange={handleChange} className='input' />
           </div>
           {errors.amount && <p className="error">{errors.amount}</p>}
@@ -109,17 +115,17 @@ const Form = ({setResults}) => {
         <div className='form-group-horizontal'>
           <div className="form-group">
             <label htmlFor="termYears" className="text-preset-4 text-slate-700">Term (years)</label>
-            <div className="input-group">
+            <div className={classNames('input-group', { 'outline-error': errors.termYears })}>
               <input type="number" id="termYears" name="termYears" value={form.termYears} onChange={handleChange} className='input' />
-              <span className='icon text-preset-3'>years</span>
+              <span className={classNames('icon text-preset-3', { 'icon-error': errors.termYears })}>years</span>
             </div>
             {errors.termYears && <p className="error">{errors.termYears}</p>}
           </div>
           <div className="form-group">
             <label htmlFor="interestRate" className="text-preset-4 text-slate-700">Interest rate (%)</label>
-            <div className="input-group">
+            <div className={classNames('input-group', { 'outline-error': errors.interestRate })}>
               <input type="number" id="interestRate" name="interestRate" value={form.interestRate} onChange={handleChange} className='input' />
-              <span className='icon text-preset-3'>%</span>
+              <div className={classNames('icon text-preset-3', { 'icon-error': errors.interestRate })}>%</div>
             </div>
             {errors.interestRate && <p className="error">{errors.interestRate}</p>}
           </div>
@@ -134,6 +140,7 @@ const Form = ({setResults}) => {
             <input type="radio" id="interest" name="type" value="interest" checked={form.type === 'interest'} onChange={handleChange} className='radio' />
             <label htmlFor="interest" className='text-preset-3 text-slate-900'>Interest Only</label>
           </div>
+          {errors.type && <p className="error">{errors.type}</p>}
         </div>
         <button type="submit" className="btn btn-primary text-preset-3">
           <img src={calculatorIcon} alt="Calculator icon"/>

@@ -5,7 +5,7 @@
   --color-primary-light: hsl(61, 70%, 62%);
   --color-primary-dark: hsl(61, 70%, 42%);
   
-  --color-secondary: hsl(4, 69%, 50%);
+  --color-error: hsl(4, 69%, 50%);
   --color-secondary-light: hsl(4, 69%, 60%);
   --color-secondary-dark: hsl(4, 69%, 40%);
   
@@ -41,5 +41,4 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1440px;
-
 }

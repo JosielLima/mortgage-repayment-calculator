@@ -24,3 +24,16 @@
 .m-300 { margin: var(--space-300); }
 .m-400 { margin: var(--space-400); }
 .m-500 { margin: var(--space-500); }
+
+.error {
+  color: var(--color-error);
+}
+
+.icon-error {
+  background-color: var(--color-error) !important;
+  color: var(--color-white) !important;
+}
+
+.outline-error {
+  outline-color: var(--color-error) !important;
+}

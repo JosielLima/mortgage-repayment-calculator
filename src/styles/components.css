@@ -2,7 +2,7 @@
 .container {
   max-width: var(--breakpoint-lg);
   margin: 0 auto;
-  height: 600px;
+  height: 660px;
   background-color: var(--color-white);
   border-radius: 24px;
 }
@@ -95,6 +95,8 @@
     cursor: pointer;
   }
 
+
+
   .input-group {
     outline: 1px solid var(--color-slate-700);
     border-radius: 0.5rem;
@@ -102,6 +104,7 @@
     display: flex;
     align-items: center;
     justify-content: start;
+    background-color: var(--color-white);
 
     .icon {
       background-color: var(--color-slate-100);
@@ -111,10 +114,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
+      border-radius: 6px;
       padding: 0 0.5rem;
-      background-color: #fff;
     }
   }
 
@@ -129,6 +130,10 @@
     color: var(--color-slate-700);
     background-color: #fff;
    }
+
+   input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-white) inset !important;
+  }
 
    input[type=radio] {
     -webkit-appearance: none;
