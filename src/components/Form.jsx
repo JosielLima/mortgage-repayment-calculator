@@ -105,9 +105,9 @@ const Form = ({setResults}) => {
           <button onClick={handleReset} className='text-preset-4 btn-reset'>Clear</button>
         </header>
         <div className="form-group">
-          <label htmlFor="amount" className="text-preset-4 text-slate-700">Mortgage amount (€)</label>
+          <label htmlFor="amount" className="text-preset-4 text-slate-700">Mortgage amount (£)</label>
           <div className={classNames('input-group', { 'outline-error': errors.amount })}>
-            <span className={classNames('icon text-preset-3', { 'icon-error': errors.amount })}>€</span>
+            <span className={classNames('icon text-preset-3', { 'icon-error': errors.amount })}>£</span>
             <input type="number" id="amount" name="amount" value={form.amount} onChange={handleChange} className='input' />
           </div>
           {errors.amount && <p className="error">{errors.amount}</p>}

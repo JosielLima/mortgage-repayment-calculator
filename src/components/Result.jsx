@@ -4,7 +4,7 @@ const Result = ({ results }) => {
   const formatarEuro = (valor) => {
     return new Intl.NumberFormat('de-DE', {
       style: 'currency',
-      currency: 'EUR',
+      currency: 'GBP',
       currencyDisplay: 'symbol',
     }).format(valor);
   }
